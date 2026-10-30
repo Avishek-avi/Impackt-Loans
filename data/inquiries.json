@@ -1,0 +1,26 @@
+[
+  {
+    "id": "inq_1793357174484_cnqdf",
+    "createdAt": "2026-10-30T10:46:14.485Z",
+    "role": "Brand / Manufacturer / Supplier",
+    "name": "Priya Mehta",
+    "email": "priya.mehta@organicwellness.com",
+    "organization": "Organic Wellness Foods",
+    "phone": "N/A",
+    "pilotScale": "200-1000 Livelihoods",
+    "message": "Looking to set up 500 women entrepreneurs as micro-distributors with escrow guarantee in Madhya Pradesh.",
+    "status": "New"
+  },
+  {
+    "id": "inq_demo_01",
+    "createdAt": "2026-10-30T10:15:00.000Z",
+    "role": "Lending Partner / NBFC / Bank",
+    "name": "Rajesh Kumar",
+    "email": "rajesh.kumar@apexfinance.in",
+    "organization": "Apex Microfinance & Rural Credit Ltd.",
+    "phone": "+91 98765 43210",
+    "pilotScale": "200-1000 Livelihoods",
+    "message": "Interested in evaluating underwriting criteria for peri-urban women retail borrowers with 10% escrow requirement.",
+    "status": "New"
+  }
+]

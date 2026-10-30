@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Impackt Loans — Home</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fbf9f4}
+a{color:#24065b}a:hover{color:#4a1fa0}
+button{font-family:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #ffca06;outline-offset:4px}
+
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes draw{from{stroke-dashoffset:420}to{stroke-dashoffset:0}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(4deg)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.12);opacity:1}100%{transform:scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes sheet{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes wiggle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(1deg)}}
+@keyframes reveal{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.75s}.d6{animation-delay:.95s}
+.draw path{stroke-dasharray:420;animation:draw 1.4s .9s cubic-bezier(.6,0,.2,1) both}
+.bob{animation:bob 7s ease-in-out infinite}
+.bob2{animation:bob 9s 1.5s ease-in-out infinite}
+.track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.grow{transform-origin:top;animation:grow .6s cubic-bezier(.6,0,.2,1) both}
+.pop{animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+.wiggle{animation:wiggle 4s ease-in-out infinite;transform-origin:left center}
+.fade{animation:fadeIn .25s ease both}
+.sheet{animation:sheet .4s cubic-bezier(.2,.7,.2,1) both}
+.drop{animation:slideDown .35s ease both}
+
+.lift{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.lift:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 22px 40px -24px rgba(36,6,91,.45)}
+.btn{transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.nav a{position:relative}
+.nav a:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#ffca06;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover:after{transform:scaleX(1)}
+.row{transition:background .3s}
+.row:hover{background:#fff6d6}
+
+@supports (animation-timeline: view()){
+  .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #201631; background: #fbf9f4; min-height: 100%; overflow-x: hidden; -webkit-font-smoothing: antialiased">
+
+<!-- HEADER + HERO -->
+<div style="background: #24065b; color: #ffffff; position: relative; overflow: hidden">
+  <div aria-hidden="true" class="bob" style="position: absolute; right: 6%; top: 120px; width: 46px; height: 52px; background: #e8062a; opacity: 0.9; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+  <div aria-hidden="true" class="bob2" style="position: absolute; left: 46%; bottom: 70px; width: 26px; height: 30px; background: #ff6a00; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+  <svg aria-hidden="true" width="420" height="420" viewBox="0 0 420 420" style="position: absolute; left: -140px; top: 200px; opacity: 0.18"><circle cx="210" cy="210" r="200" fill="none" stroke="#ffca06" stroke-width="1.5" stroke-dasharray="3 9"></circle></svg>
+
+  <header class="rise" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+    <a href="#top" aria-label="Impackt Loans home" style="display: block; width: 172px; height: 72px; overflow: hidden; border-radius: 6px">
+      <img src="./assets/4b31c7366f990ec147b345f8e68cf57d.png" alt="impackt loans" style="width: 172px; height: 72px; object-fit: cover; display: block">
+    </a>
+    <nav class="nav" aria-label="Main navigation" style="display: flex; flex-wrap: wrap; gap: 32px; font-size: 15px; font-weight: 500">
+      <a href="#partners" style="color: #e6dcf5; text-decoration: none">Who we serve</a>
+      <a href="#journey" style="color: #e6dcf5; text-decoration: none">How it works</a>
+      <a href="#outcomes" style="color: #e6dcf5; text-decoration: none">Measuring impackt</a>
+      <a href="#faq" style="color: #e6dcf5; text-decoration: none">FAQ</a>
+    </nav>
+    <a class="btn" href="#explore" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; background: #ffca06; border-radius: 8px; color: #24065b; text-decoration: none; font-size: 14px; font-weight: 700">Explore the model
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </header>
+
+  <section id="top" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 64px 32px 120px; display: flex; flex-wrap: wrap; gap: 72px; align-items: center">
+    <div style="flex: 1 1 540px; min-width: 0">
+      <div class="rise d1" style="font-family: 'Caveat', cursive; font-size: 26px; color: #ffca06; transform: rotate(-2deg); transform-origin: left">for lenders, brands &amp; women building businesses —</div>
+      <h1 class="rise d2" style="margin: 18px 0 28px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(46px, 6.4vw, 92px); line-height: 1; letter-spacing: -0.03em">Finance a <em style="font-style: italic; color: #ffca06">livelihood.</em><br>Measure its
+        <span style="position: relative; display: inline-block; white-space: nowrap">progress.
+          <svg class="draw" aria-hidden="true" viewBox="0 0 300 24" preserveAspectRatio="none" style="position: absolute; left: -2%; bottom: -14px; width: 104%; height: 22px; overflow: visible"><path d="M4 16 C 60 6, 140 4, 210 10 S 280 18, 296 8" fill="none" stroke="#ff6a00" stroke-width="5" stroke-linecap="round"></path></svg>
+        </span>
+      </h1>
+      <p class="rise d3" style="margin: 0; max-width: 500px; font-size: 19px; line-height: 1.7; color: #d9cfe9">Credit becomes more meaningful when it comes with a business opportunity, a committed brand and a clear view of what happens next.</p>
+      <div class="rise d4" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 40px">
+        <a class="btn" href="#partners" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 8px; background: #ffca06; color: #24065b; text-decoration: none; font-size: 16px; font-weight: 700; box-shadow: 4px 4px 0 #ff6a00">Find your place in the model
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a href="#journey" style="color: #ffffff; font-size: 16px; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,202,6,0.6); text-underline-offset: 6px; text-decoration-thickness: 2px">See how it works</a>
+      </div>
+    </div>
+
+    <div class="rise d5" style="flex: 1 1 400px; min-width: 0; max-width: 470px; position: relative">
+      <div class="wiggle" style="position: absolute; top: -46px; right: 10px; font-family: 'Caveat', cursive; font-size: 24px; color: #ffca06; display: flex; align-items: flex-end; gap: 6px">the whole picture, not just the loan
+        <svg aria-hidden="true" width="44" height="40" viewBox="0 0 44 40" fill="none" stroke="#ffca06" stroke-width="2.2" stroke-linecap="round"><path d="M40 4 C 30 10, 22 22, 10 34"></path><path d="M10 34 L 11 24 M10 34 L 20 32"></path></svg>
+      </div>
+      <div style="background: #fbf9f4; color: #201631; border-radius: 6px; padding: 32px 30px; transform: rotate(1.4deg); box-shadow: 0 30px 60px -28px rgba(0,0,0,0.6), 10px 10px 0 #3a1580">
+        <div aria-hidden="true" style="position: absolute; top: -12px; left: 46%; width: 90px; height: 24px; background: rgba(255,202,6,0.85); transform: rotate(-4deg)"></div>
+        <div style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 15px; color: #6b5f7c">The Impackt model, in three moves</div>
+        <div style="margin-top: 22px">
+          <div style="display: flex; gap: 18px">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <div aria-hidden="true" class="pop d5" style="width: 38px; height: 44px; background: #e8062a; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+              <div aria-hidden="true" class="grow d5" style="width: 0; height: 30px; border-left: 2px dashed #c8bed6"></div>
+            </div>
+            <div style="padding-top: 4px">
+              <div style="font-size: 19px; font-weight: 700">Purposeful credit</div>
+              <div style="font-size: 14px; color: #6b5f7c; margin-top: 3px">Lender-led assessment &amp; approval</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 18px">
+            <div style="display: flex; flex-direction: column; align-items: center">
+              <div aria-hidden="true" class="pop d6" style="width: 38px; height: 44px; background: #ffca06; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+              <div aria-hidden="true" class="grow d6" style="width: 0; height: 30px; border-left: 2px dashed #c8bed6"></div>
+            </div>
+            <div style="padding-top: 4px">
+              <div style="font-size: 19px; font-weight: 700">Escrow-backed engagement</div>
+              <div style="font-size: 14px; color: #6b5f7c; margin-top: 3px">Defined supplier terms &amp; release conditions</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 18px">
+            <div aria-hidden="true" class="pop" style="width: 38px; height: 44px; flex: none; background: #ff6a00; animation-delay: 1.15s; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+            <div style="padding-top: 4px">
+              <div style="font-size: 19px; font-weight: 700">Brand-supported business</div>
+              <div style="font-size: 14px; color: #6b5f7c; margin-top: 3px">Local distribution, setup &amp; handholding</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 26px; padding-top: 20px; border-top: 1.5px dashed #d6cde2">
+          <div style="font-family: 'Caveat', cursive; font-size: 22px; color: #c2410c">what we actually track:</div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; letter-spacing: -0.01em; margin-top: 2px; color: #24065b">Income. Repayment. Savings.</div>
+          <div style="font-size: 14px; color: #6b5f7c; margin-top: 6px">A continuing record of livelihood progress.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" style="background: #ffca06; color: #24065b; overflow: hidden; border-bottom: 2px solid #24065b">
+  <div class="track" style="padding: 18px 0; font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-style: italic">
+    <span style="display: flex; gap: 44px; padding-right: 44px; white-space: nowrap; align-items: center">
+      <span>Opportunity before disbursement</span><span aria-hidden="true" style="font-style: normal; color: #e8062a">⬢</span>
+      <span>Contract-led use of funds</span><span aria-hidden="true" style="font-style: normal; color: #ff6a00">⬢</span>
+      <span>Progress after lending</span><span aria-hidden="true" style="font-style: normal; color: #24065b">⬢</span>
+      <span>Brands that stay involved</span><span aria-hidden="true" style="font-style: normal; color: #e8062a">⬢</span>
+      <span>Records that tell the real story</span><span aria-hidden="true" style="font-style: normal; color: #ff6a00">⬢</span>
+    </span>
+    <span aria-hidden="true" style="display: flex; gap: 44px; padding-right: 44px; white-space: nowrap; align-items: center">
+      <span>Opportunity before disbursement</span><span style="font-style: normal; color: #e8062a">⬢</span>
+      <span>Contract-led use of funds</span><span style="font-style: normal; color: #ff6a00">⬢</span>
+      <span>Progress after lending</span><span style="font-style: normal; color: #24065b">⬢</span>
+      <span>Brands that stay involved</span><span style="font-style: normal; color: #e8062a">⬢</span>
+      <span>Records that tell the real story</span><span style="font-style: normal; color: #ff6a00">⬢</span>
+    </span>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<section id="partners" style="max-width: 1240px; margin: 0 auto; padding: 120px 32px 100px">
+  <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between">
+    <div style="max-width: 760px">
+      <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 600; color: #6b5f7c"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; color: #24065b">01</span><span style="width: 40px; height: 1.5px; background: #24065b"></span>Three participants, one connected model</div>
+      <h2 style="margin: 20px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: #24065b">A different value for <em style="font-style: italic">everyone</em> involved.</h2>
+    </div>
+    <div style="font-family: 'Caveat', cursive; font-size: 24px; color: #c2410c; transform: rotate(-3deg); display: flex; align-items: center; gap: 8px">pick who you are
+      <svg aria-hidden="true" width="40" height="44" viewBox="0 0 40 44" fill="none" stroke="#c2410c" stroke-width="2.2" stroke-linecap="round"><path d="M6 4 C 22 8, 30 22, 22 40"></path><path d="M22 40 L 16 32 M22 40 L 29 34"></path></svg>
+    </div>
+  </div>
+
+  <div role="tablist" aria-label="Audience" class="reveal" style="display: flex; flex-wrap: wrap; gap: 0; margin-top: 44px; border-bottom: 1.5px solid #ddd5e7">
+    <sc-for list="{{tabs}}" as="tab" hint-placeholder-count="3">
+      <button role="tab" aria-selected="{{tab.selected}}" onClick="{{tab.pick}}" style="{{tab.style}}"><span style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; margin-right: 10px; opacity: 0.7">{{tab.num}}</span>{{tab.label}}</button>
+    </sc-for>
+  </div>
+
+  <sc-for list="{{panel}}" as="aud" hint-placeholder-count="1">
+    <div role="tabpanel" class="drop" style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 64px">
+      <div style="flex: 1 1 400px; min-width: 0">
+        <h3 style="margin: 0 0 18px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.18; letter-spacing: -0.015em">{{aud.title}}</h3>
+        <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #5b5068">{{aud.intro}}</p>
+        <button class="btn" onClick="{{openCurrent}}" style="margin-top: 30px; display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 22px; border: 0; border-radius: 8px; background: #24065b; color: #ffffff; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 4px 4px 0 #ffca06">See the discussion checklist
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <ol style="flex: 1 1 480px; min-width: 0; margin: 0; padding: 0; list-style: none">
+        <sc-for list="{{aud.features}}" as="f" hint-placeholder-count="3">
+          <li class="row" style="display: flex; gap: 22px; padding: 24px 16px; border-top: 1.5px solid #ddd5e7; border-radius: 4px">
+            <span style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 30px; line-height: 1; color: #ff6a00; width: 40px; flex: none">{{f.n}}</span>
+            <div>
+              <div style="font-size: 18px; font-weight: 700">{{f.t}}</div>
+              <p style="margin: 6px 0 0; font-size: 15px; line-height: 1.65; color: #5b5068">{{f.d}}</p>
+            </div>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </sc-for>
+
+  <sc-if value="{{isLenders}}" hint-placeholder-val="{{ true }}">
+    <div class="drop" style="margin-top: 56px; position: relative">
+      <div style="font-family: 'Caveat', cursive; font-size: 24px; color: #c2410c; margin: 0 0 10px 6px; transform: rotate(-1.5deg); transform-origin: left">how this differs from a typical DSA ↓</div>
+      <div style="border: 1.5px solid #24065b; border-radius: 6px; overflow-x: auto; background: #ffffff; box-shadow: 8px 8px 0 #e9e2f3">
+        <table style="border-collapse: collapse; width: 100%; min-width: 640px; text-align: left; font-size: 15px">
+          <thead>
+            <tr>
+              <th style="padding: 18px 24px; font-weight: 700; border-bottom: 1.5px solid #24065b">Relationship focus</th>
+              <th style="padding: 18px 24px; font-weight: 700; border-bottom: 1.5px solid #24065b; color: #6b5f7c">Typical sourcing-led DSA</th>
+              <th style="padding: 18px 24px; background: #24065b; color: #ffca06; font-weight: 700; border-bottom: 1.5px solid #24065b">Proposed Impackt Loans model</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row">
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; font-weight: 600">Before sanction</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #6b5f7c">Borrower sourcing and application support</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #24065b; font-weight: 700">Borrower + business opportunity + brand engagement</td>
+            </tr>
+            <tr class="row">
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; font-weight: 600">Use of funds</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #6b5f7c">Defined by lender product</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #24065b; font-weight: 700">Contract-led escrow and supplier engagement</td>
+            </tr>
+            <tr class="row">
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; font-weight: 600">After disbursement</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #6b5f7c">Varies by DSA agreement</td>
+              <td style="padding: 18px 24px; border-bottom: 1px solid #e3dfe9; color: #24065b; font-weight: 700">Business support coordination and outcome tracking</td>
+            </tr>
+            <tr class="row">
+              <td style="padding: 18px 24px; font-weight: 600">Success measure</td>
+              <td style="padding: 18px 24px; color: #6b5f7c">Often sourcing and disbursement</td>
+              <td style="padding: 18px 24px; color: #24065b; font-weight: 700">Business activity, income, repayment and savings</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </sc-if>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" style="background: #24065b; color: #ffffff; position: relative; overflow: hidden">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px">
+    <div class="reveal" style="max-width: 820px">
+      <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 600; color: #cab8df"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; color: #ffca06">02</span><span style="width: 40px; height: 1.5px; background: #ffca06"></span>From eligibility to earnings</div>
+      <h2 style="margin: 20px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.025em">The loan is one step.<br><em style="font-style: italic; color: #ffca06">The livelihood is the journey.</em></h2>
+    </div>
+
+    <div style="margin-top: 72px; position: relative">
+      <svg aria-hidden="true" viewBox="0 0 1200 40" preserveAspectRatio="none" style="position: absolute; left: 0; top: 30px; width: 100%; height: 40px; opacity: 0.5"><path d="M0 20 C 200 0, 300 40, 500 20 S 800 0, 1000 22 S 1150 30, 1200 18" fill="none" stroke="#ffca06" stroke-width="2" stroke-dasharray="6 10"></path></svg>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 48px; row-gap: 56px">
+        <article class="reveal">
+          <div style="width: 84px; height: 96px; background: #3a1580; color: #ffca06; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">1</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Check eligibility</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">Proposed screening: CIBIL score of at least 750, zero days past due in the previous year, anchor recommendation or membership, and a co-applicant and guarantor. Final acceptance rests with the lender.</p>
+        </article>
+        <article class="reveal" style="padding-top: 28px">
+          <div style="width: 84px; height: 96px; background: #3a1580; color: #ffca06; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">2</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Find the business fit</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">Assess an existing business, develop a business idea, or match an interested first-time owner with a suitable brand opportunity.</p>
+        </article>
+        <article class="reveal">
+          <div style="width: 84px; height: 96px; background: #3a1580; color: #ffca06; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">3</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Set up the engagement</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">Complete business requirements, define supplier responsibilities, and establish the escrow arrangement and account controls.</p>
+        </article>
+        <article class="reveal">
+          <div style="width: 84px; height: 96px; background: #3a1580; color: #ffca06; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">4</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Meet the contribution check</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">The proposed model requires at least 10% of the loan value to be maintained in the designated account before disbursement, subject to agreed lender terms.</p>
+        </article>
+        <article class="reveal" style="padding-top: 28px">
+          <div style="width: 84px; height: 96px; background: #3a1580; color: #ffca06; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">5</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Approve &amp; deploy funds</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">The lender assesses and approves the loan. Disbursement and escrow use follow the signed contract, including permitted releases and recourse.</p>
+        </article>
+        <article class="reveal" style="position: relative">
+          <div style="width: 84px; height: 96px; background: #ffca06; color: #24065b; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 34px; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)">6</div>
+          <div style="position: absolute; top: 18px; left: 104px; font-family: 'Caveat', cursive; font-size: 24px; color: #ffca06; transform: rotate(-4deg)">← where it really starts</div>
+          <h3 style="margin: 22px 0 10px; font-size: 21px; font-weight: 700">Earn, repay &amp; build a record</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #d4c6e5">Track trading activity, earnings, repayments and savings. Use these records to develop an Impackt Score with a defined, reviewable methodology.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section id="outcomes" style="max-width: 1240px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 72px">
+  <div class="reveal" style="flex: 1 1 380px; min-width: 0">
+    <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 600; color: #6b5f7c"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; color: #24065b">03</span><span style="width: 40px; height: 1.5px; background: #24065b"></span>Social purpose, with evidence</div>
+    <h2 style="margin: 20px 0 24px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: #24065b">Success should be <em style="font-style: italic">visible</em> in the records.</h2>
+    <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #5b5068">A disbursed loan is the beginning of the story. The proposed outcome framework follows whether a business operates, generates income and supports sustainable repayment.</p>
+    <div style="margin-top: 32px; padding: 20px 22px; background: #fff3b8; transform: rotate(-1.2deg); box-shadow: 0 14px 24px -18px rgba(0,0,0,0.4); max-width: 420px">
+      <div style="font-family: 'Caveat', cursive; font-size: 22px; color: #7a3a00; line-height: 1">a quick, honest note</div>
+      <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: #4d3a00">These are proposed measures, not reported results. Baselines, review frequency and verification responsibilities must be agreed with each lending partner.</p>
+    </div>
+  </div>
+  <div style="flex: 1.3 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
+    <article class="reveal lift" style="padding: 30px 28px; border-radius: 6px; background: #ffffff; border: 1.5px solid #24065b">
+      <div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 18px; height: 21px; background: #e8062a; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></span><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; color: #5b5068">BUSINESS ACTIVITY</span></div>
+      <h3 style="margin: 18px 0 10px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em">Is the livelihood operating?</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5b5068">Setup completion, trading continuity, stock movement and repeat orders.</p>
+    </article>
+    <article class="reveal lift" style="padding: 30px 28px; border-radius: 6px; background: #ffca06; border: 1.5px solid #24065b; margin-top: 28px">
+      <div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 18px; height: 21px; background: #24065b; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></span><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; color: #24065b">ECONOMIC PROGRESS</span></div>
+      <h3 style="margin: 18px 0 10px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em; color: #24065b">Is income improving?</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3a2a55">Sales, margins, net earnings and savings, compared with an agreed baseline.</p>
+    </article>
+    <article class="reveal lift" style="padding: 30px 28px; border-radius: 6px; background: #ffffff; border: 1.5px solid #24065b">
+      <div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 18px; height: 21px; background: #ff6a00; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></span><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; color: #5b5068">CREDIT PERFORMANCE</span></div>
+      <h3 style="margin: 18px 0 10px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em">Is repayment sustainable?</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5b5068">Repayment timeliness, overdue days and repayment capacity from business cash flow.</p>
+    </article>
+    <article class="reveal lift" style="padding: 30px 28px; border-radius: 6px; background: #24065b; color: #ffffff; border: 1.5px solid #24065b; margin-top: 28px">
+      <div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 18px; height: 21px; background: #ffca06; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></span><span style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; color: #cab8df">ACCOUNTABILITY</span></div>
+      <h3 style="margin: 18px 0 10px; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 24px; letter-spacing: -0.01em">Can the outcome be checked?</h3>
+      <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #d4c6e5">Consented business records, escrow statements and documented brand support, with review exceptions flagged.</p>
+    </article>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="border-top: 1.5px solid #ddd5e7">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 72px">
+    <div class="reveal" style="flex: 1 1 320px; min-width: 0">
+      <div style="display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 600; color: #6b5f7c"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 18px; color: #24065b">04</span><span style="width: 40px; height: 1.5px; background: #24065b"></span>The questions that matter</div>
+      <h2 style="margin: 20px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.025em; color: #24065b">Clarity before <em style="font-style: italic">commitment.</em></h2>
+      <div style="margin-top: 22px; font-family: 'Caveat', cursive; font-size: 24px; color: #c2410c; transform: rotate(-2deg); transform-origin: left">the hard ones, answered straight.</div>
+    </div>
+    <div class="reveal" style="flex: 2 1 560px; min-width: 0; border-top: 1.5px solid #24065b">
+      <sc-for list="{{faqs}}" as="q" hint-placeholder-count="4">
+        <div style="border-bottom: 1.5px solid #ddd5e7">
+          <button aria-expanded="{{q.expanded}}" onClick="{{q.toggle}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 64px; padding: 26px 4px; background: transparent; border: 0; text-align: left; font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 400; color: #201631; cursor: pointer">
+            <span>{{q.q}}</span>
+            <span aria-hidden="true" style="{{q.iconStyle}}">+</span>
+          </button>
+          <sc-if value="{{q.open}}" hint-placeholder-val="{{ false }}">
+            <p class="drop" style="margin: 0; padding: 0 60px 28px 4px; max-width: 760px; font-size: 16px; line-height: 1.75; color: #5b5068">{{q.a}}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="explore" style="background: #24065b; color: #ffffff; position: relative; overflow: hidden">
+  <div aria-hidden="true" class="bob" style="position: absolute; left: 8%; top: 90px; width: 34px; height: 39px; background: #ffca06; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+  <div aria-hidden="true" class="bob2" style="position: absolute; right: 9%; top: 160px; width: 22px; height: 25px; background: #e8062a; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)"></div>
+  <div style="max-width: 1240px; margin: 0 auto; padding: 120px 32px; text-align: center; position: relative">
+    <div class="reveal" style="font-family: 'Caveat', cursive; font-size: 28px; color: #ffca06">start with the right conversation</div>
+    <h2 class="reveal" style="margin: 14px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(38px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.025em">One model. <em style="font-style: italic; color: #ffca06">Three ways</em> to participate.</h2>
+    <p class="reveal" style="margin: 20px auto 0; max-width: 520px; font-size: 17px; line-height: 1.6; color: #cab8df">Explore the requirements and discussion checklist for your role.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 56px; text-align: left">
+      <sc-for list="{{roles}}" as="r" hint-placeholder-count="3">
+        <button class="reveal lift" onClick="{{r.open}}" style="{{r.cardStyle}}">
+          <span aria-hidden="true" style="{{r.hexStyle}}"></span>
+          <span style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; line-height: 1.15">{{r.label}}</span>
+          <span style="font-size: 14px; line-height: 1.6; color: #5b5068">{{r.sub}}</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 700; color: #24065b; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #ff6a00; text-decoration-thickness: 2px">Open checklist →</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #1a0444; color: #cab8df">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 40px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+      <img src="./assets/4b31c7366f990ec147b345f8e68cf57d.png" alt="impackt loans" style="width: 130px; height: 54px; object-fit: cover; border-radius: 6px; display: block">
+      <span style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 16px">Livelihood finance. Brand engagement. Measurable progress.</span>
+    </div>
+    <span style="font-size: 13px; color: #a995c4">Concept-stage platform · Partnerships and availability subject to confirmation.</span>
+  </div>
+</footer>
+
+<!-- CHECKLIST MODAL -->
+<sc-if value="{{modalOpen}}" hint-placeholder-val="{{ false }}">
+  <div class="fade" style="position: fixed; inset: 0; z-index: 50; background: rgba(24,6,48,0.72); display: flex; align-items: center; justify-content: center; padding: 20px">
+    <div role="dialog" aria-modal="true" aria-label="Participation checklist" class="sheet" style="position: relative; width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; background: #fbf9f4; color: #201631; border-radius: 6px; padding: 44px 40px 36px; box-shadow: 10px 10px 0 #ffca06; background-image: repeating-linear-gradient(#fbf9f4 0 39px, #ebe4f3 39px 40px)">
+      <button aria-label="Close checklist" onClick="{{closeModal}}" style="position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #24065b; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+      <div style="font-family: 'Caveat', cursive; font-size: 24px; color: #c2410c">your participation checklist</div>
+      <h2 style="margin: 4px 0 22px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: 36px; letter-spacing: -0.02em; color: #24065b">{{modal.heading}}</h2>
+      <ol style="margin: 0; padding: 0; list-style: none">
+        <sc-for list="{{modal.items}}" as="c" hint-placeholder-count="5">
+          <li class="drop" style="{{c.style}}">
+            <span aria-hidden="true" style="width: 22px; height: 22px; flex: none; margin-top: 2px; border: 2px solid #24065b; border-radius: 4px"></span>
+            <span style="font-size: 16px; line-height: 1.55">{{c.t}}</span>
+          </li>
+        </sc-for>
+      </ol>
+      <p style="margin: 22px 0 0; font-size: 13px; line-height: 1.6; color: #5b5068">This prepares your discussion; it does not submit an application.</p>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'lenders', faq: 0, modal: null };
+  }
+  renderVals() {
+    var self = this;
+    var A = {
+      lenders: {
+        label: 'Lenders', num: 'i.', heading: 'For lending partners',
+        sub: 'Move from loan sourcing to livelihood coordination.',
+        title: 'Move from loan sourcing to livelihood coordination.',
+        intro: 'A typical sourcing-led Direct Selling Agent (DSA) relationship focuses on connecting borrowers with lenders. Impackt Loans proposes an ongoing operating layer around the business behind the loan.',
+        features: [
+          ['An opportunity linked to the credit', 'Assess the business activity, brand relationship and expected cash flow alongside the borrower.'],
+          ['Social intent that can be reviewed', 'Agree outcome measures and follow the livelihood after disbursement, using documented evidence.'],
+          ['Lender control stays with the lender', 'Retain credit assessment, sanction and pricing authority. Define platform responsibilities, monitoring and exceptions through the partnership.']
+        ],
+        check: ['Define eligible borrower and business categories.', 'Agree underwriting information and lender approval responsibilities.', 'Document escrow ownership, releases, recourse and loss allocation.', 'Agree outcome indicators, evidence, consent and review frequency.', 'Set intervention triggers for stalled business or repayment stress.']
+      },
+      brands: {
+        label: 'Brands', num: 'ii.', heading: 'For brand partners',
+        sub: 'Reach more neighbourhoods through supported local businesses.',
+        title: 'Reach more neighbourhoods through supported local businesses.',
+        intro: 'Build a peri-urban and hyperlocal distribution channel with women business owners and a fund-based escrow arrangement. Add a route to market alongside existing dealer and distributor networks.',
+        features: [
+          ['Contractual cover for trade engagement', 'Define the funded escrow amount, covered obligations, beneficiary rights and claim conditions before stock moves.'],
+          ['A wider, local distribution footprint', 'Match suitable owners to territories and product opportunities, with clear order, margin and stock terms.'],
+          ['Handholding as a defined commitment', 'Agree product training, onboarding, replenishment, returns and ongoing support so local owners can operate effectively.']
+        ],
+        check: ['Identify products, territories and suitable local owner profiles.', 'Define margins, minimum orders and replenishment terms.', 'Specify stock ownership, returns, buyback and failure recourse.', 'Document escrow coverage and release or claim conditions.', 'Agree training, field support and business reporting responsibilities.']
+      },
+      owners: {
+        label: 'Business owners', num: 'iii.', heading: 'For business owners',
+        sub: 'Start with an opportunity. Build with support.',
+        title: 'Start with an opportunity. Build with support.',
+        intro: 'Whether you already run a business, have an idea or are exploring your first opportunity, the model connects business setup, lender assessment and brand handholding.',
+        features: [
+          ['Choose a business that fits', 'Review your interests, local demand, available time and the economics of the opportunity.'],
+          ['Get help with the practical setup', 'Coordinate business requirements and supplier engagement before funds are deployed under the agreed arrangement.'],
+          ['Stay connected after you start', 'Access the support agreed with your brand and keep a clear view of orders, income, repayments and savings. Business success depends on demand, execution and the terms of engagement.']
+        ],
+        check: ['Review your eligibility and existing repayment record.', 'Choose an existing business, your idea or a brand opportunity.', 'Understand margins, costs, territory and stock responsibilities.', 'Review loan terms, contribution requirements and guarantor obligations.', 'Confirm brand training and ongoing support commitments.', 'Understand what happens if the business underperforms.']
+      }
+    };
+    var keys = ['lenders', 'brands', 'owners'];
+    var roleLabels = { lenders: 'I am a lender', brands: 'I represent a brand', owners: 'I want to build a business' };
+    var hexColors = { lenders: '#e8062a', brands: '#ffca06', owners: '#ff6a00' };
+    var tilts = { lenders: '-1.5deg', brands: '1deg', owners: '-0.6deg' };
+    var cur = A[this.state.tab];
+    var tabs = keys.map(function (k) {
+      var sel = self.state.tab === k;
+      return {
+        label: A[k].label, num: A[k].num, selected: sel ? 'true' : 'false',
+        pick: function () { self.setState({ tab: k }); },
+        style: 'min-height: 56px; padding: 0 28px; margin-bottom: -1.5px; border: 0; border-bottom: 3px solid ' + (sel ? '#ff6a00' : 'transparent') +
+          '; background: transparent; font-size: 17px; font-weight: 700; cursor: pointer; transition: color .2s, border-color .3s; color: ' + (sel ? '#24065b' : '#6b5f7c')
+      };
+    });
+    var faqData = [
+      ['Does an escrow guarantee remove business or lending risk?', 'No. A funded escrow provides a defined source of contractual cover; it does not automatically eliminate losses. Ownership, beneficiary rights, release triggers, disputes, unsold stock and shortfall responsibility must be documented before engagement.'],
+      ['Who approves the loan and decides its terms?', 'The lending partner. Impackt Loans is designed to coordinate business opportunities, engagement and outcome tracking. Loan sanction, pricing and repayment terms remain subject to the lender’s assessment and the executed agreement.'],
+      ['What support can a business owner expect?', 'The model seeks brand-led onboarding, product guidance, setup assistance and continuing business support. The exact training, territory, stock terms and service commitments are defined for each opportunity. Earnings and business success are not guaranteed.'],
+      ['Can the model support priority-sector lending objectives?', 'It is designed around livelihood-generating enterprise opportunities. Any priority-sector classification must be assessed by the lender against applicable requirements for the specific borrower, activity and loan.']
+    ];
+    var faqs = faqData.map(function (f, i) {
+      var open = self.state.faq === i;
+      return {
+        q: f[0], a: f[1], open: open, expanded: open ? 'true' : 'false',
+        toggle: function () { self.setState({ faq: open ? -1 : i }); },
+        iconStyle: 'width: 40px; height: 40px; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif; font-size: 24px; font-weight: 400; line-height: 1; transition: transform .35s cubic-bezier(.2,.7,.2,1), background .3s; ' +
+          (open ? 'background: #ff6a00; color: #ffffff; transform: rotate(135deg)' : 'background: transparent; border: 1.5px solid #24065b; color: #24065b')
+      };
+    });
+    var roles = keys.map(function (k) {
+      return {
+        label: roleLabels[k], sub: A[k].sub,
+        open: function () { self.setState({ modal: k }); },
+        cardStyle: 'display: flex; flex-direction: column; gap: 14px; padding: 32px 28px; border-radius: 6px; border: 0; background: #fbf9f4; color: #201631; text-align: left; cursor: pointer; transform: rotate(' + tilts[k] + '); box-shadow: 8px 8px 0 ' + hexColors[k],
+        hexStyle: 'display: block; width: 30px; height: 34px; background: ' + hexColors[k] + '; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)'
+      };
+    });
+    var m = this.state.modal ? A[this.state.modal] : A.lenders;
+    return {
+      tabs: tabs,
+      panel: [{
+        key: this.state.tab,
+        title: cur.title, intro: cur.intro,
+        features: cur.features.map(function (f, i) { return { t: f[0], d: f[1], n: String(i + 1) }; })
+      }],
+      isLenders: this.state.tab === 'lenders',
+      openCurrent: function () { self.setState({ modal: self.state.tab }); },
+      faqs: faqs,
+      roles: roles,
+      modalOpen: !!this.state.modal,
+      closeModal: function () { self.setState({ modal: null }); },
+      modal: {
+        heading: m.heading,
+        items: m.check.map(function (t, i) {
+          return { t: t, style: 'display: flex; gap: 14px; align-items: flex-start; padding: 9px 0; animation-delay: ' + (0.15 + i * 0.08) + 's' };
+        })
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
