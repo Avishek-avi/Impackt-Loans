@@ -54,8 +54,8 @@ export default function HomePage() {
       {/* 3-Way Role CTA */}
       <RolesCta onOpenChecklist={handleOpenChecklist} />
 
-      {/* Partner Inquiry & Pilot Alignment Form */}
-      <InquiryForm />
+      {/* Section: Start a structured discussion. */}
+      {/* <InquiryForm /> */}
 
       {/* Footer */}
       <Footer onOpenChecklist={handleOpenChecklist} />
